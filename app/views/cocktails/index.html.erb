@@ -1,7 +1,17 @@
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li>
-    <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
-    <% end %>
-  </li>
-</ul>
+<div class="home-banner">
+  <h1> Mix it up</h1>
+</div>
+
+<div class="container">
+  <h2>Cocktails Galore, which will be your next drink? Have a look below!</h2>
+
+  <div class= "card">
+    <ul>
+      <% @cocktails.each do |cocktail| %>
+        <li>
+          <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+      <% end %>
+        </li>
+    </ul>
+  </div>
+</div>

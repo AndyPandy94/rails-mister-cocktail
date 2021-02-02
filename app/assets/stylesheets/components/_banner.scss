@@ -1,1 +1,20 @@
-_banner.scss
+.home-banner {
+  background-image: asset-url('cocktail_banner.jpeg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 100vh;
+  color: #eee;
+  text-align: center;
+  padding-top: 40vh;
+
+  h1 {
+    font-size: 90px;
+    vertical-align: top;
+    position:relative;
+    top:-160px;
+  }
+}
