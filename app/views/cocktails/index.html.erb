@@ -10,7 +10,7 @@
   <% @cocktails.each do |cocktail| %>
       <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
       <% if cocktail.photo.attached? %>
-        <%= cl_image_tag cocktail.first.photo.key, height: 300, width: 400, crop: :fill %>
+        <%= cl_image_tag cocktail.photo.key, height: 300, width: 400, crop: :fill %>
       <% else %>
         <%= image_tag "cocktail-glass-blank.jpg", alt: "empty cocktail glass", height: 300, width: 400, crop: :fill  %>
       <% end %>
@@ -19,4 +19,5 @@
 </div>
 
 <%= link_to "Create a new Cocktail", new_cocktail_path(@cocktail_id) %>
+
 <!-- #grid template columns look for this! says julio! -->

@@ -1,7 +1,7 @@
 <%= simple_form_for(@cocktail) do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
-  <%= f.input :photos, as: :file, input_html: { multiple: true } %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
 
