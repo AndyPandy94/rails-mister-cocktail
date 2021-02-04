@@ -7,7 +7,19 @@
   <li>
     <%= dose.description %>
   </li>
-    <%= button_to "delete", dose_path(dose), method: :delete %>
+    <%= button_to "Delete", dose_path(dose), method: :delete %>
 <% end %>
 </ul>
+<%= link_to "Add a new dose?", new_cocktail_dose_path(@cocktail) %>
 
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+  <li>
+    <%= dose.ingredient.name %>
+  </li>
+  <% end %>
+</ul>
+
+<%= link_to "Add a new ingredient?", new_ingredient_path %>
+
+<%= link_to "Back to our Mix it up cocktails?", cocktails_path %>
