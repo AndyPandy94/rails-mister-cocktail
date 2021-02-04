@@ -18,9 +18,5 @@
   </div>
 </div>
 
-
-#grid template columns look for this! says julio!
-
-<% #@cocktails.first.photos.each do |photo| %>
-  <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
-<%# end %>
+<%= link_to "Create a new Cocktail", new_cocktail_path(@cocktail_id) %>
+<!-- #grid template columns look for this! says julio! -->
