@@ -7,16 +7,20 @@
   <h2>Cocktails Galore, which will be your next drink? Have a look below!</h2>
 
   <div class= "card">
-    <ul>
-      <% @cocktails.each do |cocktail| %>
-        <li>
-          <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+  <% @cocktails.each do |cocktail| %>
+      <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+      <% if cocktail.photo.attached? %>
+        <%= cl_image_tag cocktail.first.photo.key, height: 300, width: 400, crop: :fill %>
+      <% else %>
+        <%= image_tag "cocktail-glass-blank.jpg", alt: "empty cocktail glass", height: 300, width: 400, crop: :fill  %>
       <% end %>
-        </li>
-    </ul>
+    <% end %>
   </div>
 </div>
 
 
+#grid template columns look for this! says julio!
 
-<%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
+<% #@cocktails.first.photos.each do |photo| %>
+  <%#= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+<%# end %>
