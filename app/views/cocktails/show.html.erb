@@ -1,32 +1,25 @@
-<% if @cocktail.photo.attached? %>
-  <%= cl_image_tag @cocktail.photo.key, height: 300, width: 400, crop: :fill %>
-  <% else %>
-<%= image_tag "cocktail-glass-blank.jpg", alt: "empty cocktail glass", height: 300, width: 400, crop: :fill  %>
-<% end %>
 
-<div class="doses-list">
-<h2><%= @cocktail.name %></h2>
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.ingredient.name%> - <%=dose.description %>
-  </li>
-      <%= button_to "Delete", dose_path(dose), method: :delete %>
-    <% end %>
-  </ul>
-  <%= link_to "Add a new measurement?", new_cocktail_dose_path(@cocktail) %>
+<div class="container-show">
+    <h2><%= @cocktail.name %></h2>
+  <div class="doses-list">
+      <div class="card-2">
+        <% if @cocktail.photo.attached? %>
+          <%= cl_image_tag @cocktail.photo.key, height: 300, width: 300, crop: :fit %>
+        <% else %>
+          <%= image_tag "cocktail-glass-blank.jpg", alt: "empty cocktail glass", height: 300, width: 300, crop: :fit  %>
+        <% end %>
+          <% @cocktail.doses.each do |dose| %>
+          <div class="dose"><%= dose.ingredient.name%> - <%=dose.description %></div>
+          <%= button_to "Delete this dose?", dose_path(dose), method: :delete %>
+        </div>
+        <% end %>
+       <div class = "text-measurement"><%= link_to "Add a new measurement?", new_cocktail_dose_path(@cocktail) %></div>
+  </div>
 </div>
 
-<div class="ingredients-list">
-  <ul>
-    <% @cocktail.doses.each do |dose| %>
-  <li>
-    <%= dose.ingredient.name %>
-  </li>
-  <% end %>
-  </ul>
-    <%#= link_to "Add a new ingredient?", new_ingredient_path %>
+
+<div class="footer-2">
+  <%= link_to "Back to our Mix it up cocktails?", cocktails_path %>
+
 </div>
 
-<%= link_to "Back to our Mix it up cocktails?", cocktails_path %>
-<%= button_to "Delete", cocktail_path(@cocktail), method: :delete %>

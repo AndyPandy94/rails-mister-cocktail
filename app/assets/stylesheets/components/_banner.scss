@@ -1,3 +1,5 @@
+$blue: #012e7f;
+
 .home-banner {
   background-image: asset-url('cocktail_banner.jpg');
   background-repeat: no-repeat;
@@ -12,9 +14,22 @@
   padding-top: 40vh;
 
   h1 {
-    font-size: 90px;
+    font-size: 130px;
     vertical-align: top;
     position:relative;
     top:-160px;
+    font-family: 'Sacramento', cursive;
+    color: #eee;
+    text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+
   }
+}
+
+body{
+  background-color: $blue;
 }
