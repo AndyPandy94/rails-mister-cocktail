@@ -10,9 +10,9 @@
     <% @cocktails.each do |cocktail| %>
       <div class="card"> <h3><%= link_to cocktail.name, cocktail_path(cocktail.id) %></h3>
         <% if cocktail.photo.attached? %>
-          <%= cl_image_tag cocktail.photo.key, height: 300, width: 300, crop: :fit %>
+          <%= cl_image_tag cocktail.photo.key, height: 300, width: 300, crop: :fit, class: "image" %>
         <% else %>
-          <%= image_tag "cocktail-glass-blank.jpg", alt: "empty cocktail glass", height: 300, width: 300, crop: :fit  %>
+          <%= image_tag "cocktail-glass-blank.jpg", alt: "empty cocktail glass", height: 300, width: 300, crop: :fit, class: "image"  %>
         <% end %>
       </div>
     <% end %>
