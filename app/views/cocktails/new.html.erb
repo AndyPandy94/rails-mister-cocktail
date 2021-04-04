@@ -1,8 +1,24 @@
-<%= simple_form_for(@cocktail) do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.input :photo, as: :file %>
-  <%= f.submit %>
-<% end %>
+<div class="container">
+  <div class="row justify-content-center mt-5">
+    <div class="col-6">
+      <div class="cocktail-form">
 
-<%= link_to "Back to tasty cocktails!", cocktails_path %>
+        <%= simple_form_for(@cocktail) do |f| %>
+          Name of your cocktail:
+          <%= f.text_field :name %>
+          <%= f.input :photo, as: :file %>
+          <%= f.submit %>
+        <% end %>
+
+        <br>
+
+          <div class="text-center">
+            <%= link_to "Back to our list of tasty cocktails!", cocktails_path %>
+          </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+
