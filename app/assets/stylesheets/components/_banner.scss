@@ -17,7 +17,7 @@ $blue: #012e7f;
     font-size: 130px;
     vertical-align: top;
     position:relative;
-    top:-160px;
+    top:-250px;
     font-family: 'Sacramento', cursive;
     color: #eee;
     text-shadow:
@@ -27,8 +27,19 @@ $blue: #012e7f;
       -1px 1px 0 #000,
        1px 1px 0 #000;
 
+    h2 {
+
+      text-align: center;
+      font-family: 'Sacramento', cursive;
+      color: $white;
+      position:relative;
+      top:272px;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
   }
 }
+
+
 
 body{
   background-color: $blue;

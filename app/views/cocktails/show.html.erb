@@ -12,7 +12,7 @@
         <% end %>
           <% @cocktail.doses.each do |dose| %>
           <div class="dose"><%= dose.ingredient.name%> - <%=dose.description %></div>
-          <%= button_to "Delete this dose?", dose_path(dose), method: :delete, class: " btn button_to" %>
+          <%= button_to "Delete this dose?", dose_path(dose), method: :delete, class: "btn button_to" %>
         <% end %>
       </div>
       <div class = "text-measurement"><%= link_to "Add a new measurement?", new_cocktail_dose_path(@cocktail) %></div>
